@@ -7,9 +7,6 @@
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "ngg": "src/app.ts"
-  },
   "type": "module",
   "keywords": [],
   "author": "",

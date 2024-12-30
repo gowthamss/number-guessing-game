@@ -46,6 +46,23 @@ const startGame = async () => {
                 console.log(`Incorrect! The number is greater than ${guess.guess}.`);
                 choices--;
             }
+
+            if (choices === 0) {
+                console.log(`Sorry! You have exhausted all your chances. The correct number was ${game.getComputerGuess()}.`);
+                console.log(`Do you want to play again?`);
+                const playAgain = await prompts({
+                    type: 'confirm',
+                    name: 'confirmation',
+                    message: 'Enter your choice (y/n):',
+                    initial: false
+                });
+
+                if (playAgain.confirmation) {
+                    startGame();
+                } else {
+                    console.log(`Thank you for playing!`);
+                }
+            }
         }
     })();
 
