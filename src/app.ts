@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import prompts from 'prompts';
-import Game from './Game.js';
+import Game from './Game.ts';
 
 const startGame = async () => {
     Game.displayWelcomeMessage();
@@ -25,8 +25,6 @@ const startGame = async () => {
         console.info(`Great! You have selected the ${game.getDifficultyLevel() === 1 ? 'Easy' : game.getDifficultyLevel() === 2 ? 'Medium' : 'Hard'} level.`);
         console.info(`Let's start the game!`);
         
-        // game.startGame();
-        console.log(game.getComputerGuess());
         let choices: number = game.getNoOfChances();
         while (choices > 0) {
             const guess = await prompts({
@@ -65,11 +63,6 @@ const startGame = async () => {
             }
         }
     })();
-
-    // (async () => {
-
-    //     // console.log(guess.choice);
-    // })();
 };
 
 startGame();

@@ -1,4 +1,4 @@
-import GameBuilder from './GameBuilder.js';
+import GameBuilder from './GameBuilder.ts';
 
 class Game {
         private computerGuess: number;
